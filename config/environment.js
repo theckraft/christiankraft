@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'christiankraft',
+    podModulePrefix: 'christiankraft/pods',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
