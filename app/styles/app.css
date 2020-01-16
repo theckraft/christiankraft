@@ -1,0 +1,6 @@
+.modal {
+  position: fixed !important;
+  .description {
+    width: 80% !important;
+  }
+}

@@ -1,0 +1,17 @@
+<div class="content">
+  <div class="header">
+    {{skill.name}}
+  </div>
+  <div class="description">
+    {{skill.notes}}
+  </div>
+</div>
+<div class="extra content">
+  {{ui-rating class="huge" rating=skill.competence onRate=(action (mut skill.competence)) maxRating=5 interactive=false}}
+</div>
+{{#if isOwner}}
+  <div {{action "openModal"}} class="ui bottom attached button">
+    <i class="edit icon"></i> Edit
+  </div>
+{{/if}}
+{{skill-edit-modal skill=skill}}

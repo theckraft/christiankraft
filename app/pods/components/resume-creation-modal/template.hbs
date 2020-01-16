@@ -1,0 +1,33 @@
+<i class="close icon"></i>
+<div class="header">
+  Create Resume
+</div>
+<div class="image content">
+  <div class="image">
+    <i class="edit icon"></i>
+  </div>
+  <div class="description">
+    <form class="ui form">
+      <h4 class="ui dividing header">Name</h4>
+      <div class="field">
+        <label>First Name</label> {{input value=firstName}}
+      </div>
+      <div class="field">
+        <label>Last Name</label> {{input value=lastName}}
+      </div>
+    </form>
+  </div>
+</div>
+<div class="actions">
+  <button {{action "cancel"}} class="ui black cancel button">
+    Cancel
+  </button>
+  <button
+    onClick={{action "submit"}}
+    disabled={{isInvalidForm}}
+    class="ui positive right labeled icon approve button"
+  >
+    Submit
+    <i class="checkmark icon"></i>
+  </button>
+</div>

@@ -1,0 +1,60 @@
+<i class="close icon"></i>
+<div class="header">
+  Add Experience
+</div>
+<div class="image content">
+  <div class="image">
+    <i class="edit icon"></i>
+  </div>
+  <div class="description">
+    <form class="ui form">
+      <h4 class="ui dividing header">Information</h4>
+      <div class="field">
+        <label>Title</label> {{input value=title}}
+      </div>
+      <div class="field">
+        <label>Company</label> {{input value=company}}
+      </div>
+      <div class="field">
+        <label>Location</label> {{input value=location}}
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <label>Start Date</label> {{ui-calendar
+            today=true
+            type="month"
+            maxDate=today
+            onChange=(action (mut startDate))
+            placeholder="Start Date"
+            allowClear=true
+          }}
+        </div>
+        <div class="field">
+          <label>End Date</label> {{ui-calendar
+            today=true
+            type="month"
+            startDate=startDate
+            minDate=startDate
+            endDate=endDate
+            maxDate=today
+            onChange=(action (mut endDate))
+            placeholder="End Date"
+            allowClear=true
+          }}
+        </div>
+      </div>
+      <div class="field">
+        <label>Description</label> {{textarea value=description cols="80" rows="6"}}
+      </div>
+    </form>
+  </div>
+</div>
+<div class="actions">
+  <button {{action "cancel"}} class="ui black cancel button">
+    Cancel
+  </button>
+  <button onClick= {{action "submit"}} disabled= {{isInvalidForm}} class="ui positive right labeled icon approve button">
+    Submit
+    <i class="checkmark icon"></i>
+  </button>
+</div>

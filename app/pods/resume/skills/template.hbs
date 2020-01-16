@@ -1,0 +1,8 @@
+<h3 class="ui center aligned icon header">
+  {{resume.firstName}}'s Skills
+</h3>
+{{#if isOwner}}
+  {{skill-creation-button createSkill=(action "createSkill")}}
+{{/if}}
+<div class="ui divider"></div>
+<br> {{skill-cards skills=skills isOwner=isOwner}}

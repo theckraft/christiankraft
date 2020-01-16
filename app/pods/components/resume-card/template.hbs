@@ -1,0 +1,8 @@
+<div class="content">
+  {{#link-to "resume" resume class="header"}}
+    {{resume.firstName}} {{resume.lastName}}
+  {{/link-to}}
+  <div class="description">
+    {{markdown-to-html resume.description}}
+  </div>
+</div>

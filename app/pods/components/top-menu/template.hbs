@@ -1,0 +1,11 @@
+{{#link-to "dashboard" class="item"}}
+  <i class="dashboard icon"></i>
+{{/link-to}}
+{{yield}}
+<div class="ui secondary right menu">
+  {{#if session.isAuthenticated}}
+    <a {{action signOut}} class="item">Sign Out</a>
+  {{else}}
+    <a {{action signIn "google"}} class="item">Sign In</a>
+  {{/if}}
+</div>

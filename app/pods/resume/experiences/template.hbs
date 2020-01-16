@@ -1,0 +1,8 @@
+<h3 class="ui center aligned icon header">
+  {{resume.firstName}}'s Experience
+</h3>
+{{#if isOwner}}
+  {{experience-creation-button createExperience=(action "createExperience")}}
+{{/if}}
+<div class="ui divider"></div>
+<br> {{experience-cards experiences=experiences isOwner=isOwner}}

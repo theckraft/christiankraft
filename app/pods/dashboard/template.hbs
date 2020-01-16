@@ -1,0 +1,16 @@
+<h2 class="ui center aligned icon header">
+  <i class="circular clipboard icon"></i>
+  Resumes
+</h2>
+{{#if session.isAuthenticated}}
+  {{resume-creation-button createResume=(action "createResume")}}
+{{else}}
+  <div class="ui warning message">
+    <div class="header">
+      You must sign in before you can create a resume!
+    </div>
+    Click the "Sign In" button to sign in through Google.
+  </div>
+{{/if}}
+<div class="ui divider"></div>
+<br> {{resume-cards resumes=resumes}}

@@ -1,0 +1,35 @@
+<i class="close icon"></i>
+<div class="header">
+  Edit Skill
+</div>
+<div class="image content">
+  <div class="image">
+    <i class="edit icon"></i>
+  </div>
+  <div class="description">
+    <form class="ui form">
+      <h4 class="ui dividing header">Information</h4>
+      <div class="field">
+        <label>Name</label> {{input value=changeset.name}}
+      </div>
+      <div class="field">
+        <label>Notes</label> {{textarea value=changeset.notes cols="80" rows="6"}}
+      </div>
+      <div class="field">
+        <label>Expertise</label> {{ui-rating class="huge" rating=skill.competence onRate=(action (mut changeset.competence)) maxRating=5}}
+      </div>
+    </form>
+  </div>
+</div>
+<div class="actions">
+  <button {{action "delete"}} class="ui red left floated button">
+    Delete
+  </button>
+  <button {{action "rollback" changeset}} class="ui black cancel button">
+    Cancel
+  </button>
+  <button onClick= {{action "submit" changeset}} disabled= {{isInvalidForm}} class="ui positive right labeled icon approve button">
+    Submit
+    <i class="checkmark icon"></i>
+  </button>
+</div>

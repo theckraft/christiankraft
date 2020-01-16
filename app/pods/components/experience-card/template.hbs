@@ -1,3 +1,24 @@
-<img class="image" src={{experience.image_path}} style="padding:0em">
-<h3>{{experience.title}}</h3>
-<h3>{{experience.date_range}}</h3>
+<div class="content">
+  <div class="header">{{experience.company}}
+    <div class="right floated meta">
+      {{monthRange}}
+    </div>
+  </div>
+  <div class="meta">
+    {{experience.title}}
+    <span class="right floated meta">
+      {{experience.location}}
+    </span>
+  </div>
+</div>
+<div class="extra content">
+  <div class="description">
+    {{markdown-to-html experience.description}}
+  </div>
+</div>
+{{#if isOwner}}
+  <div {{action "openModal"}} class="ui bottom attached button">
+    <i class="edit icon"></i> Edit
+  </div>
+{{/if}}
+{{experience-edit-modal experience=experience}}

@@ -1,7 +1,17 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import {
+  inject as service
+} from '@ember/service';
 
-export default Ember.Route.extend({
-  beforeModel( /* transition */ ) {
-    window.location.replace("https://drive.google.com/file/d/1YudmO2KuKluoGAk_aSCxXaB7lyYKhQNC/view?usp=sharing");
+export default Route.extend({
+  session: service(),
+  beforeModel: function() {
+    return this.get('session').fetch().catch(function() {});
+  },
+  model: function() {},
+  actions: {
+    refresh: function() {
+      this.refresh();
+    }
   }
 });

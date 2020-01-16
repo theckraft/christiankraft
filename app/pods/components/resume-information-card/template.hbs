@@ -1,0 +1,18 @@
+<div class="ui placeholder">
+  <div class="image"></div>
+</div>
+<div class="content">
+  <a class="large header">{{resume.fullName}}</a>
+  <div class="meta">
+    <span class="date">{{currentTitle}}</span>
+  </div>
+  <div class="description">
+    {{markdown-to-html resume.description}}
+  </div>
+</div>
+{{#if isOwner}}
+  <div {{action "openModal"}} class="ui bottom attached button">
+    <i class="edit icon"></i> Edit
+  </div>
+{{/if}}
+{{resume-edit-modal resume=resume delete=delete}}

@@ -7,6 +7,17 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    firebase: {
+      apiKey: "AIzaSyC-6L9oSRstSxJtS2_B-BqGYYHcZlS2XyE",
+      authDomain: "resume-builder-ckraft.firebaseapp.com",
+      databaseURL: "https://resume-builder-ckraft.firebaseio.com",
+      projectId: "resume-builder-ckraft",
+      storageBucket: "resume-builder-ckraft.appspot.com",
+      messagingSenderId: "498869189458"
+    },
+    torii: {
+      sessionServiceName: 'session'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

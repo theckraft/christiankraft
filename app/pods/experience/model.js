@@ -1,8 +1,11 @@
-import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
   title: DS.attr('string'),
-  date_range: DS.attr('string'),
-  descriptions: DS.attr()
+  company: DS.attr('string'),
+  location: DS.attr('string'),
+  startDate: DS.attr('date'),
+  endDate: DS.attr('date'),
+  description: DS.attr('string'),
+  resume: DS.belongsTo('resume', { inverse: 'experiences' })
 });

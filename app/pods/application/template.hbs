@@ -1,0 +1,8 @@
+<br>
+<div class="ui container">
+  {{#top-menu signIn=(action "signIn") signOut=(action "signOut")}}
+    {{outlet "menu"}}
+  {{/top-menu}}
+  <br> {{outlet}}
+</div>
+{{ember-notify closeAfter=5000}}
