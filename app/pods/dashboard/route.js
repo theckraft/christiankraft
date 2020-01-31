@@ -6,7 +6,7 @@ import {
 export default Route.extend({
   session: service(),
   beforeModel: function() {
-    return this.transitionTo('/resume/-L_h_z2CUcvemirlw_vB')
+    // return this.transitionTo('/resume/-L_h_z2CUcvemirlw_vB')
   },
   model() {
     let session = this.get('session');

@@ -2,7 +2,9 @@
   <div class="image"></div>
 </div>
 <div class="content">
-  <a class="large header">{{resume.fullName}}</a>
+  <h2 class="ui huge header">
+    {{resume.fullName}}
+  </h2>
   <div class="meta">
     <span class="date">{{currentTitle}}</span>
   </div>
@@ -15,4 +17,4 @@
     <i class="edit icon"></i> Edit
   </div>
 {{/if}}
-{{resume-edit-modal resume=resume delete=delete}}
+{{resume-edit-modal resume=resume}}

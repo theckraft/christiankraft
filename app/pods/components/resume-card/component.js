@@ -17,5 +17,10 @@ export default Component.extend({
     };
     let dateFormatted = startDate.toLocaleDateString("en-US", options);
     return dateFormatted;
-  })
+  }),
+  actions: {
+    deleteResume() {
+      this.get('deleteResume')();
+    }
+  }
 });

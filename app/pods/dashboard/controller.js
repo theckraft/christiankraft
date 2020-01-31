@@ -23,6 +23,21 @@ export default Controller.extend({
       }).catch((error) => {
         self.get('notify').error('Could Not Create Resume!');
       });
+    },
+    deleteResume(resume) {
+      let experiences = resume.get('experiences');
+      experiences.forEach(function(experience) {
+        experience.destroyRecord();
+      });
+
+      let skills = resume.get('skills');
+      skills.forEach(function(skill) {
+        skill.destroyRecord();
+      });
+
+      resume.destroyRecord();
+
+      this.get('notify').info('Resume Deleted!');
     }
   }
 });

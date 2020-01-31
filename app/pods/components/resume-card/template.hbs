@@ -1,8 +1,12 @@
-<div class="content">
-  {{#link-to "resume" resume class="header"}}
+{{#link-to "resume" resume class="content"}}
+  <div class="ui header">
     {{resume.firstName}} {{resume.lastName}}
-  {{/link-to}}
+  </div>
   <div class="description">
     {{markdown-to-html resume.description}}
   </div>
+{{/link-to}}
+<div class="extra content">
+  <div class="ui basic green button">Approve</div>
+  <div {{action 'deleteResume'}} class="ui basic right floated red button">Delete</div>
 </div>

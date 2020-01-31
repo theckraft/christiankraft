@@ -8,5 +8,10 @@ export default Component.extend({
   //Computed Properties
   sortedResumes: sort('resumes', function(a, b) {
     return 0;
-  })
+  }),
+  actions: {
+    deleteResume(resume) {
+      this.get('deleteResume')(resume);
+    }
+  }
 });

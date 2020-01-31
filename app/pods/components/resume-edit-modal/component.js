@@ -55,10 +55,6 @@ export default UiModal.extend({
       return changeset.rollback();
       self.get('notify').success('Resume Rollback! Did not modify.');
     },
-    delete() {
-      this.$().modal('hide');
-      this.get('delete')();
-    },
     cancel: function() {}
   }
 });
