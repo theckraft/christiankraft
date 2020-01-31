@@ -2,31 +2,66 @@
 <div class="header">
   Edit Resume
 </div>
-<div class="image content">
-  <div class="image">
-    <i class="edit icon"></i>
-  </div>
-  <div class="description">
-    <form class="ui form">
-      <h4 class="ui dividing header">Name</h4>
-      <div class="field">
-        <label>First Name</label> {{input value=changeset.firstName}}
+<div class="content">
+  <div class="ui stackable two column grid">
+    <div class="six wide column">
+      {{#file-dropzone name="photos" as |dropzone queue|}}
+        <div class="ui placeholder segment">
+          {{#if dropzone.active}}
+            {{#if dropzone.valid}}
+              Drop to upload
+            {{else}}
+              Invalid
+            {{/if}}
+          {{else if queue.files.length}}
+            Uploading {{queue.files.length}} files. ({{queue.progress}}%)
+          {{else}}
+            <h2 class="ui icon header">
+              <i class="file image outline icon"></i>
+              <div class="content">
+                Upload Images
+                {{#if dropzone.supported}}
+                  <div class="sub header">
+                    Drag and drop images onto this area to upload them or
+                  </div>
+                {{/if}}
+              </div>
+            </h2>
+            {{#file-upload name="photos"
+                           for="upload-photo"
+                           accept="image/*"
+                           multiple=true
+                           onfileadd=(action "uploadImage")}}
+              <a class="ui primary button">Add Image</a>
+            {{/file-upload}}
+          {{/if}}
+        </div>
+      {{/file-dropzone}}
+    </div>
+    <div class="ten wide column">
+      <div class="description">
+        <form class="ui form">
+          <h4 class="ui dividing header">Name</h4>
+          <div class="field">
+            <label>First Name</label> {{input value=changeset.firstName}}
+          </div>
+          <div class="field">
+            <label>Last Name</label> {{input value=changeset.lastName}}
+          </div>
+          <div class="field">
+            <label>Description</label> {{textarea value=changeset.description cols="80" rows="6"}}
+          </div>
+        </form>
       </div>
-      <div class="field">
-        <label>Last Name</label> {{input value=changeset.lastName}}
-      </div>
-      <div class="field">
-        <label>Description</label> {{textarea value=changeset.description cols="80" rows="6"}}
-      </div>
-    </form>
+    </div>
   </div>
 </div>
 <div class="actions">
   <button {{action "rollback" changeset}} class="ui black cancel button">
-  Cancel
-</button>
-  <button onClick= {{action "submit" changeset}} disabled= {{isInvalidForm}} class="ui positive right labeled icon approve button">
-  Submit
-  <i class="checkmark icon"></i>
-</button>
+    Cancel
+  </button>
+  <button onClick={{action "submit" changeset}} disabled={{isInvalidForm}} class="ui positive right labeled icon approve button">
+    Submit
+    <i class="checkmark icon"></i>
+  </button>
 </div>

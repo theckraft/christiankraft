@@ -21,5 +21,10 @@ export default Controller.extend({
   notify: service(),
   resume: alias('model'),
   resumeController: controller('resume'),
-  isOwner: alias('resumeController.isOwner')
+  isOwner: alias('resumeController.isOwner'),
+  actions: {
+    didSelectFiles(data) {
+      console.log(data);
+    }
+  }
 });

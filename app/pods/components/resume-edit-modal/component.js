@@ -47,13 +47,17 @@ export default UiModal.extend({
     this.set('changeset', changeset);
   },
   actions: {
+    uploadImage(files) {
+      this.get("didSelectFiles")(files);
+    },
     submit(changeset) {
+      console.log("here")
+      this.get('notify').success('Resume Modified!');
       return changeset.save();
-      self.get('notify').success('Resume Modified!');
     },
     rollback(changeset) {
+      //this.get('notify').success('Resume Rollback! Did not modify.');
       return changeset.rollback();
-      self.get('notify').success('Resume Rollback! Did not modify.');
     },
     cancel: function() {}
   }
