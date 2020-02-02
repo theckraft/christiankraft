@@ -14,7 +14,7 @@
               Invalid
             {{/if}}
           {{else if queue.files.length}}
-            Uploading {{queue.files.length}} files. ({{queue.progress}}%)
+            Uploading file. ({{queue.progress}}%)
           {{else}}
             <h2 class="ui icon header">
               <i class="file image outline icon"></i>
@@ -30,7 +30,7 @@
             {{#file-upload name="photos"
                            for="upload-photo"
                            accept="image/*"
-                           multiple=true
+                           multiple=false
                            onfileadd=(action "uploadImage")}}
               <a class="ui primary button">Add Image</a>
             {{/file-upload}}
