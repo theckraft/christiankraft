@@ -5,6 +5,15 @@
 <div class="content">
   <div class="ui stackable two column grid">
     <div class="six wide column">
+      <div class="ui segment">
+        <div class="ui fluid image">
+          {{#if changeset.photoURL}}
+            <img src={{changeset.photoURL}}>
+          {{else}}
+            <img src="/image.png">
+          {{/if}}
+        </div>
+      </div>
       {{#file-dropzone name="photos" as |dropzone queue|}}
         <div class="ui placeholder segment">
           {{#if dropzone.active}}
@@ -16,17 +25,14 @@
           {{else if queue.files.length}}
             Uploading file. ({{queue.progress}}%)
           {{else}}
-            <h2 class="ui icon header">
-              <i class="file image outline icon"></i>
-              <div class="content">
-                Upload Images
-                {{#if dropzone.supported}}
-                  <div class="sub header">
-                    Drag and drop images onto this area to upload them or
-                  </div>
-                {{/if}}
-              </div>
-            </h2>
+            <div class="ui centered header">
+              Upload Images
+              {{#if dropzone.supported}}
+                <div class="sub header">
+                  Drag and drop images onto this area to upload them or
+                </div>
+              {{/if}}
+            </div>
             {{#file-upload name="photos"
                            for="upload-photo"
                            accept="image/*"

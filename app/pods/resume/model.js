@@ -10,6 +10,7 @@ export default DS.Model.extend({
      return `${firstName} ${lastName}`;
   }),
   description: DS.attr('string'),
+  photoURL: DS.attr('string'),
   experiences: DS.hasMany('experience', { inverse: 'resume' }),
   skills: DS.hasMany('skill', { inverse: 'resume' }),
   user: DS.belongsTo('user', { inverse: 'resumes' })

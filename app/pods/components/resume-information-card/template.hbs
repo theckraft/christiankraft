@@ -1,5 +1,9 @@
-<div class="ui placeholder">
-  <div class="image"></div>
+<div class="image">
+  {{#if resume.photoURL}}
+    <img class="ui image" src={{resume.photoURL}}>
+  {{else}}
+    <img class="ui image" src="/image.png">
+  {{/if}}
 </div>
 <div class="content">
   <h2 class="ui huge header">
@@ -17,4 +21,4 @@
     <i class="edit icon"></i> Edit
   </div>
 {{/if}}
-{{resume-edit-modal resume=resume didSelectFiles=didSelectFiles}}
+{{resume-edit-modal resume=resume}}
