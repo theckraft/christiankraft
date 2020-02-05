@@ -9,7 +9,7 @@ module.exports = function(environment) {
     locationType: 'auto',
     firebase: {
       apiKey: "AIzaSyC-6L9oSRstSxJtS2_B-BqGYYHcZlS2XyE",
-      authDomain: "resume-builder-ckraft.firebaseapp.com",
+      authDomain: "christiankraft.com",
       databaseURL: "https://resume-builder-ckraft.firebaseio.com",
       projectId: "resume-builder-ckraft",
       storageBucket: "resume-builder-ckraft.appspot.com",
