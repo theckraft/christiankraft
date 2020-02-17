@@ -13,5 +13,6 @@ export default DS.Model.extend({
   photoURL: DS.attr('string'),
   experiences: DS.hasMany('experience', { inverse: 'resume' }),
   skills: DS.hasMany('skill', { inverse: 'resume' }),
+  contactInfos: DS.hasMany('contact-info', { inverse: 'resume' }),
   user: DS.belongsTo('user', { inverse: 'resumes' })
 });

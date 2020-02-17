@@ -1,0 +1,14 @@
+<div class="content">
+  <div>
+    {{contactInfo.type}}
+  </div>
+  <span class="meta">
+    {{contactInfo.value}}
+  </span>
+</div>
+{{#if isOwner}}
+  <div {{action "openModal"}} class="ui bottom attached button">
+    <i class="edit icon"></i> Edit
+  </div>
+{{/if}}
+{{contact-info-edit-modal contactInfo=contactInfo}}

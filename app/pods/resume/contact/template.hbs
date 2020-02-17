@@ -1,9 +1,8 @@
 <h3 class="ui center aligned icon header">
   {{resume.firstName}}'s Contact Information
 </h3>
+{{#if isOwner}}
+  {{contact-info-creation-button createContactInfo=(action "createContactInfo")}}
+{{/if}}
 <div class="ui divider"></div>
-<div class="ui segment">
-  <div class="ui label">
-    <i class="mail icon"></i> {{resume.user.email}}
-  </div>
-</div>
+<br> {{contact-info-cards contactInfos=contactInfos isOwner=isOwner}}

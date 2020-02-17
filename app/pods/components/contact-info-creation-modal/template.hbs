@@ -1,0 +1,35 @@
+<i class="close icon"></i>
+<div class="header">
+  Add Contact Information
+</div>
+<div class="content">
+  <div class="description">
+    <form class="ui form">
+      <h4 class="ui dividing header">Details</h4>
+      {{#ui-dropdown class="selection" selected=type onChange=(action (mut type))}}
+        <div class="default text">Type</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          {{#each possibleTypes as |type|}}
+            <div data-value="{{type}}" class="item">
+              {{type}}
+            </div>
+          {{/each}}
+        </div>
+      {{/ui-dropdown}}
+      <div class="ui divider"></div>
+      <div class="field">
+        {{input value=value placeholder="Value"}}
+      </div>
+    </form>
+  </div>
+</div>
+<div class="actions">
+  <button {{action "cancel"}} class="ui black cancel button">
+    Cancel
+  </button>
+  <button onClick={{action "submit"}} disabled={{isInvalidForm}} class="ui positive right labeled icon approve button">
+    Submit
+    <i class="checkmark icon"></i>
+  </button>
+</div>
