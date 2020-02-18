@@ -1,22 +1,32 @@
-<div class="image">
-  {{#if resume.photoURL}}
-    <img class="ui image" src={{resume.photoURL}}>
-  {{else}}
-    <img class="ui image" src="/image.png">
-  {{/if}}
-</div>
-<div class="content">
-  <h2 class="ui huge header">
-    {{resume.fullName}}
-  </h2>
-  <div class="meta">
-    <span class="date">{{currentTitle}}</span>
+<div class="ui stackable two column grid">
+  <div class="row">
+    <div class="six wide column">
+      <div class="image">
+        {{#if resume.photoURL}}
+          <img class="ui fluid image" src={{resume.photoURL}}>
+        {{else}}
+          <img class="ui image" src="/image.png">
+        {{/if}}
+      </div>
+    </div>
+    <div class="ten wide column">
+      <div class="content">
+        <h2 class="ui huge header">
+          {{resume.fullName}}
+        </h2>
+        <div class="meta">
+          <span class="date">{{currentTitle}}</span>
+        </div>
+        <div class="description">
+          {{markdown-to-html resume.description}}
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="description">
-    {{markdown-to-html resume.description}}
-  </div>
 </div>
+
 {{#if isOwner}}
+  <div class="ui divider"></div>
   <div {{action "openModal"}} class="ui bottom attached button">
     <i class="edit icon"></i> Edit
   </div>
