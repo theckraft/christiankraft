@@ -4,7 +4,7 @@ import {
 } from '@ember/object';
 
 export default Component.extend({
-  classNames: ['ui', 'centered', 'card', 'margin: auto;'],
+  classNames: ['ui', 'centered', 'segment'],
   currentTitle: computed('resume.experiences.@each.endDate', function() {
     let output = "";
     let experiences = this.get('resume.experiences');

@@ -4,3 +4,12 @@
     width: 80% !important;
   }
 }
+
+p {
+  font-size: 1.3rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 150%;
+}
