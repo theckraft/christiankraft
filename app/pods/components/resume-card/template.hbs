@@ -3,10 +3,13 @@
     {{resume.firstName}} {{resume.lastName}}
   </div>
   <div class="description">
-    {{markdown-to-html resume.description}}
+    {{#if resume.description}}
+      {{markdown-to-html resume.description}}
+    {{else}}
+      Click to view and modify this resume!
+    {{/if}}
   </div>
 {{/link-to}}
 <div class="extra content">
-  <div class="ui basic green button">Approve</div>
-  <div {{action 'deleteResume'}} class="ui basic right floated red button">Delete</div>
+  <div {{action 'deleteResume'}} class="ui right floated button">Delete</div>
 </div>
