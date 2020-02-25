@@ -40,14 +40,13 @@ export default UiModal.extend({
 
   //Computed Properties
   //Computed Properties
-  isInvalidForm: computed('changeset.name', 'changeset.notes', 'changeset.competence', function() {
+  isInvalidForm: computed('changeset.name', 'changeset.notes', function() {
     let name = this.get('changeset.name'),
-      notes = this.get('changeset.notes'),
-      competence = this.get('changeset.competence');
+      notes = this.get('changeset.notes');
 
     let isPristine = this.get('changeset.isPristine');
 
-    let isNull = isEmpty(name) || competence == 0;
+    let isNull = isEmpty(name);
 
     return isNull || isPristine;
   }),

@@ -13,7 +13,6 @@ export default UiModal.extend({
 
   name: "",
   notes: "",
-  competence: 0,
 
   didInsertElement() {
     this._super(...arguments);
@@ -22,12 +21,11 @@ export default UiModal.extend({
   },
 
   //Computed Properties
-  isInvalidForm: computed('name', 'notes', 'competence', function() {
+  isInvalidForm: computed('name', 'notes', function() {
     let name = this.get('name'),
-      notes = this.get('notes'),
-      competence = this.get('competence');
+      notes = this.get('notes');
 
-    let isNull = isEmpty(name) || competence == 0;
+    let isNull = isEmpty(name);
 
     return isNull;
   }),
@@ -36,7 +34,6 @@ export default UiModal.extend({
     resetSkill: function() {
       this.set('name', '');
       this.set('notes', '');
-      this.set('competence', 0);
       this.$("form input").each(function() {
         $(this).val("");
       });
@@ -44,8 +41,7 @@ export default UiModal.extend({
     submit: function() {
       let skillData = {
         name: this.get('name'),
-        notes: this.get('notes'),
-        competence: this.get('competence')
+        notes: this.get('notes')
       }
       this.get('createSkill')(skillData);
       this.send('resetSkill');
