@@ -18,7 +18,7 @@ As a proof-of-concept project and exercise in design patterns, I built a music s
 
 ### Resume Builder
 
-[link to Repo](https://github.com/theckraft/resume-builder)
+[Link to Repo](https://github.com/theckraft/resume-builder)
 
 This EmberJS web application was my submission to an assignment for a graduate User Interfaces course. It simply allowed users to input and share their resume information.
 
