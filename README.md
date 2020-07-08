@@ -1,52 +1,52 @@
-# christiankraft
+# Overview of Christian Kraft's Projects
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This README outlines an overview of my projects throughout the past few years. 
 
-## Prerequisites
+I plan to use this repository's EmberJS application, which is a continuation of my resume-builder project, to display this information (which will be served at christiankraft.com).
 
-You will need the following things properly installed on your computer.
+## Scope
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Bower](https://bower.io/)
-* [Ember CLI](https://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+I have included projects that are recent, relevant, and sufficiently complete (as well as those that I am currently on). On the other hand, I have excluded projects that I feel are not indicative of my current interest and skills.
 
-## Installation
+## Software Projects
 
-* `git clone <repository-url>` this repository
-* `cd christiankraft`
-* `npm install`
-* `bower install`
+### Relay Music Player
 
-## Running / Development
+[Link to Repo](https://github.com/theckraft/RelayMusicPlayer)
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+As a proof-of-concept project and exercise in design patterns, I built a music service API adapter for the iOS music player. Specifically, I designed adapters for the Spotify and Apple Music APIs with the intention to develop a universal music player—one that can create a music queue from multiple streaming services.
 
-### Code Generators
+### Resume Builder
 
-Make use of the many generators for code, try `ember help generate` for more details
+[link to Repo](https://github.com/theckraft/resume-builder)
 
-### Running Tests
+This EmberJS web application was my submission to an assignment for a graduate User Interfaces course. It simply allowed users to input and share their resume information.
 
-* `ember test`
-* `ember test --server`
+### Senior Design - Fora, "The Platform for Discussion"
 
-### Building
+For my senior design project, my team and I engineered a web application that allowed professors to prepare discussion assignments for their students. The NodeJS frontend application (which interfaced AWS Lambda) elicited availability from the participating students and accordingly prepared a WebRTC voice discussion.
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+My team competed as a finalist in Drexel's 2018-2019 Computing and Informatics Senior Design Competition.
 
-### Deploying
+### March Madness Predictions
 
-Specify what it takes to deploy your app.
+For the past few years, a couple friends and I have participated in March Madness competitions using a classification program (that we built using the scikit-learn Python library).
 
-## Further Reading / Useful Links
+### Misc.
 
-* [ember.js](http://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+During the past couple of months, I have automated a piece of my mom's job. Specifically, I developed a Python program that reads and manipulates Excel data according to txt configuration files.
+
+## Research/Documentation Projects
+
+### Peer Grading Review and Practical Implementation
+
+[Posted on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6622862146952847360/)
+
+As part of my CS graduate curriculum, I conducted an independent study on Peer Grading Mechanism Design. I was specifically interested in how a discussion platform (see Fora above—software that would facilitate a discussion between a group of people) could elicit truthful assessments from discussion members (with regards to the other members' "performances"). Although I only earned 3 credit hours for this study, I spent about 9 credit hours worth of time developing this extensive review of peer grading mechanisms and their practical implementation.
+
+Abstract: The educational assessment method of peer grading offers various new opportunities for web-based ed- ucational platforms. Peer grading systems attempt to facilitate learning and generate legitimate grades when access to experts is limited. We study existing peer grading systems for assessment attributes and mech- anisms that increase peer grading effectiveness. We consider how web-based platforms may incorporate peer grading by describing practical implementation opportunities for an example discussion platform.
+
+### Requirements Guide
+
+Since I intend to engineer software throughout my career, I embarked on a project to aggregate best practices for requirements engineering and construct a comprehensive guide.
+
